@@ -13,16 +13,20 @@ public class Circle extends Shape{
     public final Float phi = 3.14f;
     public Float r;
 
-    public void result(String name, String type){
-        super.result(name, type);
+    public Float process(Float r, String type){
         if(type.equalsIgnoreCase("area")){
-            System.out.println(phi * r * r); 
+            return phi * r * r; 
         }
         else if(type.equalsIgnoreCase("around")){
-            System.out.println(4 * phi * r);
+            return 4 * phi * r;
         }
         else{
-            System.out.println( (4/3) * phi * r * r * r);
+            return (4/3) * phi * r * r * r;
         }
+    }
+
+    public void result(String name, String type){
+        super.result(name, type);
+        System.out.println(process(r, type));
     }
 }
